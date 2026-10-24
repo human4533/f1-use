@@ -281,9 +281,12 @@ footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 20px;
       <div class="key"><div class="cap">A / D</div><div><b>좌 / 우 조향</b></div></div>
       <div class="key"><div class="cap">Space</div><div><b>부스트</b></div></div>
       <div class="key"><div class="cap">Q</div><div><b>ERS 전개 켜기 / 끄기</b><span>배터리는 <code>/f1 ers</code> 로 확인. 차에 타면 핫바 1번 칸에 ERS 아이템이 생기고, 내리면 사라져요. 꺼도 에너지 회수는 계속돼요.</span></div></div>
+      <div class="key"><div class="cap">G</div><div><b>기어 자동 ↔ 수동 전환</b><span>기본은 자동이에요. 수동으로 바꾸면 <code>X</code> 업 / <code>Z</code> 다운으로 직접 변속해요.</span></div></div>
+      <div class="key"><div class="cap">X / Z</div><div><b>기어 업 / 다운</b><span>수동 기어일 때만 써요.</span></div></div>
+      <div class="key"><div class="cap">B</div><div><b>피트 리미터 켜기 / 끄기</b><span>피트 레인에 들어가기 전에 켜고, 나올 때 꺼요. 켜면 피트 레인 제한속도로 고정돼요.</span></div></div>
       <div class="key"><div class="cap">V</div><div><b>카메라(시점) 전환</b></div></div>
       <div class="key"><div class="cap">H</div><div><b>튜토리얼</b><span>다시 보기 / 건너뛰기</span></div></div>
-      <div class="key"><div class="cap">F</div><div><b>팀 라디오 메뉴</b><span>핫바 1~9로 질문 선택, 우클릭으로 전송</span></div></div>
+      <div class="key"><div class="cap">F</div><div><b>팀 라디오 메뉴</b><span>핫바 1~9로 질문 선택, 우클릭으로 전송. <b>4번 칸은 "신고하기"</b>예요.</span></div></div>
     </div>
     <div class="tip">처음에는 차가 생각보다 가볍게 미끄러져요. 브레이크는 조금 일찍, 조향은 부드럽게 하세요. 코스 밖(잔디)으로 나가면 크게 느려져요. 팀 라디오 설정은 <code>/라디오</code> 로 바꿔요.</div>
   </section>
@@ -303,6 +306,7 @@ footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 20px;
         <li>상대 차량을 고의로 들이받지 않아요.</li>
         <li>마샬과 심판의 결정에 따라요.</li>
         <li>불쾌한 행동은 페널티로 이어져요. 즐겁고 깨끗하게 달려요.</li>
+        <li>모든 판정은 레이스 컨트롤의 조사와 판단에 따라 결정돼요.</li>
       </ul>
     </div>
     <div class="cols">
@@ -321,6 +325,8 @@ footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 20px;
         <ul class="plain">
           <li>코스 반대 방향으로 2초 이상 달리면 역주행으로 보고 운영진에게 알려요. 느리게 후진해서 코스로 돌아오는 건 봐줘요.</li>
           <li>피트 레인에는 제한속도가 있어요. 화면에 km/h로 표시돼요.</li>
+          <li>피트 레인에 들어가기 전에 <b>B 키로 피트 리미터</b>를 켜고, 나올 때 끄세요. 켜면 차가 제한속도로 고정돼요.</li>
+          <li>리미터를 안 켜고 제한속도를 넘겨 달리면 속도위반 페널티(기본 5초)예요. 한 번 들어올 때 1회만 받아요.</li>
           <li>피트 레인이 닫혀 있을 때 들어가면 페널티(기본 5초)예요.</li>
           <li>의무 피트스톱 횟수가 있어요. 서버 설정이며 기본 2회예요.</li>
         </ul>
@@ -417,7 +423,8 @@ footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 20px;
         <h3>신고와 항의</h3>
         <ul class="plain">
           <li><b>신고</b>: 고의 충돌, 코스 막기, 욕설처럼 다른 선수의 문제 행동을 RC에 알려요. 같은 사람은 20초에 한 번만 가능해요.</li>
-          <li><code>/f1 신고 Steve 일부러 뒤에서 들이받음</code></li>
+          <li>쉬운 방법: <code>F</code>를 누르고 <b>4번 칸을 우클릭</b>하면 접속 중인 선수들의 머리가 담긴 창이 열려요. 신고할 선수의 머리를 클릭하고 사유를 고르면 바로 접수돼요.</li>
+          <li>명령어로는 <code>/f1 신고 Steve 일부러 뒤에서 들이받음</code></li>
           <li><b>항의</b>: 이미 받은 판정(페널티 등)에 이의가 있을 때 <code>/f1 항의</code> 를 써요.</li>
         </ul>
       </div>
@@ -452,6 +459,7 @@ footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 20px;
     <details><summary>차에 타도 안 움직여요.</summary><div class="ans"><p>레이스 세션이 시작되지 않았거나, 스타트 신호등이 꺼지기 전일 수 있어요. 연료가 바닥났거나 내구도가 매우 낮을 수도 있어요. <code>/f1 연료</code>, <code>/f1 내구도</code> 로 확인하세요. 계속 안 되면 운영진에게 알려 주세요.</p></div></details>
     <details><summary>코스 밖에서 멈췄어요.</summary><div class="ans"><p>차가 크게 부서졌다면 리타이어 후 크레인이 회수해요. 잔디에서는 빨리 돌아와 속도를 되찾으세요.</p></div></details>
     <details><summary>서버가 끊기거나 느려요.</summary><div class="ans"><p>운영진이 <code>/서버상태</code> 로 원인을 확인할 수 있어요. 끊긴 시각을 알려 주세요.</p></div></details>
+    <details><summary>기어가 마음대로 바뀌어요 / 수동으로 하고 싶어요.</summary><div class="ans"><p>기본은 자동 기어예요. <code>G</code>를 누르면 수동으로 바뀌고, <code>X</code>(업)와 <code>Z</code>(다운)로 변속해요. 다시 <code>G</code>를 누르면 자동으로 돌아와요.</p></div></details>
     <details><summary>튜토리얼을 다시 보고 싶어요.</summary><div class="ans"><p><code>H</code> 키를 누르세요.</p></div></details>
     <details><summary>레이스가 끝났는데 다음 레이스에 못 나가요.</summary><div class="ans"><p>레이스를 끝내면 참가 명단에서 자동으로 빠져요. 다음 레이스에 나가려면 <code>/f1 참가</code> 로 다시 등록하세요.</p></div></details>
   </section>
@@ -511,7 +519,7 @@ var INFO = { server: "dalhyeonserver.kro.kr", download: "https://drive.google.co
       '출발하면 메디컬카가 첫 바퀴를 따라 돌고 피트로 돌아가요. 첫 바퀴에 사고가 나면 사고 차 근처로 가서 상태를 확인해요.'] },
     { n: '레이스', t: '정해진 바퀴 수를 먼저 완주하는 순서로 순위 결정', l: [
       '오버테이크 모드(추월 보조)는 초반 N랩이 지나고 RC가 허용을 알린 뒤에 쓸 수 있어요. 조건은 규칙 항목에 있어요.',
-      '의무 피트스톱 횟수를 채워야 해요. 피트 레인은 속도 제한이 있고, 닫혀 있을 때 들어가면 페널티예요.',
+      '의무 피트스톱 횟수를 채워야 해요. 피트 레인은 속도 제한이 있어서 <b>B 키로 피트 리미터</b>를 켜고 들어가야 해요. 안 켜고 제한속도를 넘기거나 닫혀 있을 때 들어가면 페널티예요.',
       '연료가 바닥나면 차가 멈춰요. 남은 바퀴 수에 맞게 <code>/f1 연료</code> 를 확인하세요. 트랙에서 연료가 바닥나 멈추면 즉시 노란 깃발이 나오고 리타이어(DNF) 처리돼요.',
       '사고가 나면 RC가 깃발(노란색, 세이프티카, 레드)로 알려요. 노란 깃발 구간은 추월 금지예요.',
       '세이프티카가 나오면 차 위 경광등이 켜지고, 앞 헤드라이트와 뒤 브레이크등이 좌우로 번갈아 깜빡여요. 속도 제한과 추월 금지이니 세이프티카 뒤에 줄을 서세요.',
